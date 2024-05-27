@@ -1,0 +1,17 @@
+mapscripts Blank_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: RemovePlayerSprite
+
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_NEWGAME_START, 0: NewGameIntro
+    ]
+}
+
+script NewGameIntro {
+    lockall
+    msgbox("Are you Male or Female?")
+    releaseall
+}
+
+script RemovePlayerSprite {
+    setflag(FLAG_SPAWN_INVISIBLE)
+}
