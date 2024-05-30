@@ -1170,6 +1170,12 @@ u8 GetPlayerMovementDirection(void)
     return gObjectEvents[gPlayerAvatar.objectEventId].movementDirection;
 }
 
+u8 PlayerFemaleGender(void);
+u8 PlayerFemaleGender(void)
+{
+    return gSaveBlock2Ptr->playerGender = FEMALE;
+}
+
 u8 PlayerGetElevation(void)
 {
     return gObjectEvents[gPlayerAvatar.objectEventId].previousElevation;

@@ -8,10 +8,49 @@ mapscripts Blank_MapScripts {
 
 script NewGameIntro {
     lockall
-    msgbox("Are you Male or Female?")
+    msgbox("Will you be playing as a Male?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+       msgbox("This is the story of Shion,\n" 
+              "the youngest son.")
+       warpwhitefade (MAP_PETALBURG_CITY, -1, 30, 40)
+       waitbuttonpress
+       waitmessage
+       applymovement(OBJ_EVENT_ID_PLAYER, PlayerVisible)
+       waitmovement(10)
+       applymovement(OBJ_EVENT_ID_PLAYER, FacingUp)
+       waitmovement(10) 
+    }
+    else{
+        msgbox("Will you be playing as a Female?", MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            specialvar(VAR_RESULT, PlayerFemaleGender)
+            msgbox("This is the story of Shion,\n" 
+                   "the youngest daughter.")
+            warpwhitefade (MAP_PETALBURG_CITY, -1, 30, 40)
+            waitbuttonpress
+            waitmessage
+            applymovement(OBJ_EVENT_ID_PLAYER, PlayerVisible)
+            waitmovement(10)
+            applymovement(OBJ_EVENT_ID_PLAYER, FacingUp)
+            waitmovement(10)
+        }
+        else{
+            goto (NewGameIntro)
+        }
+    }
     releaseall
+    end
 }
 
 script RemovePlayerSprite {
     setflag(FLAG_SPAWN_INVISIBLE)
+}
+
+movement FacingUp {
+    face_up
+    step_end
+}
+
+movement PlayerVisible {
+    set_visible
 }
