@@ -4420,6 +4420,16 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/Blank/border.bin",
       "blockdata_filepath": "data/layouts/Blank/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHIONS_ROOM",
+      "name": "ShionsRoom_Layout",
+      "width": 8,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/ShionsRoom/border.bin",
+      "blockdata_filepath": "data/layouts/ShionsRoom/map.bin"
     }
   ]
 }

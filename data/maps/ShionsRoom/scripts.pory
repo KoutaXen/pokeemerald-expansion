@@ -1,0 +1,49 @@
+mapscripts ShionsRoom_MapScripts{
+
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_NEWGAME_START, 0: IntroScene
+    ]
+}
+
+script IntroScene {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, PlayerFacingUp)
+    waitmovement(10)
+    msgbox("What do I do...?", MSGBOX_AUTOCLOSE)
+    setflag(FLAG_MAID)
+    playse (SE_DOOR)
+    waitse
+    applymovement(1, MaidEntrance)
+    waitmovement(1)
+    delay(40)
+    msgbox("My liege, you are awake.\n"
+            "I've come to give you news.", MSGBOX_NPC)
+    msgbox("Yes, what is it?")
+    msgbox("The Patriarch will be arriving soon.", MSGBOX_NPC)
+    msgbox("Yes, I understand...\n"
+           "thank you for the information.\l"
+           "You may leave.")
+    msgbox("Yes, my liege.", MSGBOX_NPC)
+    waitmessage
+    applymovement(1, MaidExit)
+    waitmovement(1)
+    clearflag(FLAG_MAID)
+    waitmovement(1)
+    releaseall
+    end
+}
+
+movement PlayerFacingUp {
+    face_up
+    step_end
+}
+
+movement MaidEntrance {
+    walk_up * 4
+    step_end
+}
+
+movement MaidExit {
+    walk_down * 4
+    step_end
+}

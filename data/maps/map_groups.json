@@ -493,7 +493,8 @@
     "BattlePyramidSquare14",
     "BattlePyramidSquare15",
     "BattlePyramidSquare16",
-    "UnionRoom"
+    "UnionRoom",
+    "ShionsRoom"
   ],
   "gMapGroup_SpecialArea": [
     "SafariZone_Northwest",

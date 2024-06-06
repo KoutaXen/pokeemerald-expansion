@@ -35,7 +35,7 @@ NewGameIntro_2:
 # 13 "data/maps/Blank/scripts.pory"
 	msgbox NewGameIntro_Text_1
 # 15 "data/maps/Blank/scripts.pory"
-	warpwhitefade MAP_PETALBURG_CITY, -1, 30, 40
+	warpwhitefade MAP_SHIONS_ROOM, -1, 3, 3
 # 16 "data/maps/Blank/scripts.pory"
 	waitbuttonpress
 # 17 "data/maps/Blank/scripts.pory"
@@ -56,7 +56,7 @@ NewGameIntro_5:
 # 27 "data/maps/Blank/scripts.pory"
 	msgbox NewGameIntro_Text_3
 # 29 "data/maps/Blank/scripts.pory"
-	warpwhitefade MAP_PETALBURG_CITY, -1, 30, 40
+	warpwhitefade MAP_SHIONS_ROOM, -1, 3, 3
 # 30 "data/maps/Blank/scripts.pory"
 	waitbuttonpress
 # 31 "data/maps/Blank/scripts.pory"
@@ -81,13 +81,15 @@ RemovePlayerSprite::
 # 49 "data/maps/Blank/scripts.pory"
 FacingUp:
 # 50 "data/maps/Blank/scripts.pory"
-	face_up
+	walk_up
 # 51 "data/maps/Blank/scripts.pory"
+	face_up
+# 52 "data/maps/Blank/scripts.pory"
 	step_end
 
-# 54 "data/maps/Blank/scripts.pory"
-PlayerVisible:
 # 55 "data/maps/Blank/scripts.pory"
+PlayerVisible:
+# 56 "data/maps/Blank/scripts.pory"
 	set_visible
 	step_end
 

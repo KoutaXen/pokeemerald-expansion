@@ -1074,3 +1074,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/Blank/scripts.inc"
+
+	.include "data/maps/ShionsRoom/scripts.inc"
