@@ -31,61 +31,93 @@ IntroScene::
 # 18 "data/maps/ShionsRoom/scripts.pory"
 	delay 40
 # 19 "data/maps/ShionsRoom/scripts.pory"
-	msgbox IntroScene_Text_1, MSGBOX_NPC
+	checkplayergender
+# 20 "data/maps/ShionsRoom/scripts.pory"
+	compare VAR_RESULT, FEMALE
 # 21 "data/maps/ShionsRoom/scripts.pory"
-	msgbox IntroScene_Text_2
-# 22 "data/maps/ShionsRoom/scripts.pory"
-	msgbox IntroScene_Text_3, MSGBOX_NPC
+	goto_if_eq FemaleText
 # 23 "data/maps/ShionsRoom/scripts.pory"
-	msgbox IntroScene_Text_4
+	msgbox IntroScene_Text_1, MSGBOX_NPC
+# 25 "data/maps/ShionsRoom/scripts.pory"
+	msgbox IntroScene_Text_2
 # 26 "data/maps/ShionsRoom/scripts.pory"
-	msgbox IntroScene_Text_5, MSGBOX_NPC
+	msgbox IntroScene_Text_3, MSGBOX_NPC
 # 27 "data/maps/ShionsRoom/scripts.pory"
-	waitmessage
-# 28 "data/maps/ShionsRoom/scripts.pory"
-	applymovement 1, MaidExit
-# 29 "data/maps/ShionsRoom/scripts.pory"
-	waitmovement 1
+	msgbox IntroScene_Text_4
 # 30 "data/maps/ShionsRoom/scripts.pory"
-	clearflag FLAG_MAID
+	msgbox IntroScene_Text_5, MSGBOX_NPC
 # 31 "data/maps/ShionsRoom/scripts.pory"
-	waitmovement 1
+	waitmessage
 # 32 "data/maps/ShionsRoom/scripts.pory"
+	applymovement 1, MaidExit
+# 33 "data/maps/ShionsRoom/scripts.pory"
+	waitmovement 1
+# 34 "data/maps/ShionsRoom/scripts.pory"
+	clearflag FLAG_MAID
+# 35 "data/maps/ShionsRoom/scripts.pory"
+	waitmovement 1
+# 36 "data/maps/ShionsRoom/scripts.pory"
 	releaseall
 	end
 
 
-# 36 "data/maps/ShionsRoom/scripts.pory"
-PlayerFacingUp:
-# 37 "data/maps/ShionsRoom/scripts.pory"
-	face_up
-# 38 "data/maps/ShionsRoom/scripts.pory"
-	step_end
-
+FemaleText::
 # 41 "data/maps/ShionsRoom/scripts.pory"
-MaidEntrance:
-# 42 "data/maps/ShionsRoom/scripts.pory"
-	walk_up
-# 42 "data/maps/ShionsRoom/scripts.pory"
-	walk_up
-# 42 "data/maps/ShionsRoom/scripts.pory"
-	walk_up
-# 42 "data/maps/ShionsRoom/scripts.pory"
-	walk_up
+	msgbox FemaleText_Text_0, MSGBOX_NPC
 # 43 "data/maps/ShionsRoom/scripts.pory"
+	msgbox FemaleText_Text_1
+# 44 "data/maps/ShionsRoom/scripts.pory"
+	msgbox IntroScene_Text_3, MSGBOX_NPC
+# 45 "data/maps/ShionsRoom/scripts.pory"
+	msgbox FemaleText_Text_2
+# 48 "data/maps/ShionsRoom/scripts.pory"
+	msgbox FemaleText_Text_3, MSGBOX_NPC
+# 49 "data/maps/ShionsRoom/scripts.pory"
+	waitmessage
+# 50 "data/maps/ShionsRoom/scripts.pory"
+	applymovement 1, MaidExit
+# 51 "data/maps/ShionsRoom/scripts.pory"
+	waitmovement 1
+# 52 "data/maps/ShionsRoom/scripts.pory"
+	clearflag FLAG_MAID
+# 53 "data/maps/ShionsRoom/scripts.pory"
+	waitmovement 1
+# 54 "data/maps/ShionsRoom/scripts.pory"
+	releaseall
+	end
+
+
+# 58 "data/maps/ShionsRoom/scripts.pory"
+PlayerFacingUp:
+# 59 "data/maps/ShionsRoom/scripts.pory"
+	face_up
+# 60 "data/maps/ShionsRoom/scripts.pory"
 	step_end
 
-# 46 "data/maps/ShionsRoom/scripts.pory"
+# 63 "data/maps/ShionsRoom/scripts.pory"
+MaidEntrance:
+# 64 "data/maps/ShionsRoom/scripts.pory"
+	walk_up
+# 64 "data/maps/ShionsRoom/scripts.pory"
+	walk_up
+# 64 "data/maps/ShionsRoom/scripts.pory"
+	walk_up
+# 64 "data/maps/ShionsRoom/scripts.pory"
+	walk_up
+# 65 "data/maps/ShionsRoom/scripts.pory"
+	step_end
+
+# 68 "data/maps/ShionsRoom/scripts.pory"
 MaidExit:
-# 47 "data/maps/ShionsRoom/scripts.pory"
+# 69 "data/maps/ShionsRoom/scripts.pory"
 	walk_down
-# 47 "data/maps/ShionsRoom/scripts.pory"
+# 69 "data/maps/ShionsRoom/scripts.pory"
 	walk_down
-# 47 "data/maps/ShionsRoom/scripts.pory"
+# 69 "data/maps/ShionsRoom/scripts.pory"
 	walk_down
-# 47 "data/maps/ShionsRoom/scripts.pory"
+# 69 "data/maps/ShionsRoom/scripts.pory"
 	walk_down
-# 48 "data/maps/ShionsRoom/scripts.pory"
+# 70 "data/maps/ShionsRoom/scripts.pory"
 	step_end
 
 IntroScene_Text_0:
@@ -93,24 +125,43 @@ IntroScene_Text_0:
 	.string "What do I do...?$"
 
 IntroScene_Text_1:
-# 19 "data/maps/ShionsRoom/scripts.pory"
-	.string "My liege, you are awake.\n"
+# 23 "data/maps/ShionsRoom/scripts.pory"
+	.string "Young Master, you are awake.\n"
 	.string "I've come to give you news.$"
 
 IntroScene_Text_2:
-# 21 "data/maps/ShionsRoom/scripts.pory"
+# 25 "data/maps/ShionsRoom/scripts.pory"
 	.string "Yes, what is it?$"
 
 IntroScene_Text_3:
-# 22 "data/maps/ShionsRoom/scripts.pory"
+# 26 "data/maps/ShionsRoom/scripts.pory"
 	.string "The Patriarch will be arriving soon.$"
 
 IntroScene_Text_4:
-# 23 "data/maps/ShionsRoom/scripts.pory"
+# 27 "data/maps/ShionsRoom/scripts.pory"
 	.string "Yes, I understand...\n"
 	.string "thank you for the information.\l"
 	.string "You may leave.$"
 
 IntroScene_Text_5:
-# 26 "data/maps/ShionsRoom/scripts.pory"
-	.string "Yes, my liege.$"
+# 30 "data/maps/ShionsRoom/scripts.pory"
+	.string "Yes, Young Master.$"
+
+FemaleText_Text_0:
+# 41 "data/maps/ShionsRoom/scripts.pory"
+	.string "Young Mistress, you are awake.\n"
+	.string "I've come to give you news.$"
+
+FemaleText_Text_1:
+# 43 "data/maps/ShionsRoom/scripts.pory"
+	.string "Yes?$"
+
+FemaleText_Text_2:
+# 45 "data/maps/ShionsRoom/scripts.pory"
+	.string "Yes, I understand...\n"
+	.string "thank you...\l"
+	.string "You may go.$"
+
+FemaleText_Text_3:
+# 48 "data/maps/ShionsRoom/scripts.pory"
+	.string "Yes, Young Mistress.$"

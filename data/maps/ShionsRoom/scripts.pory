@@ -16,14 +16,36 @@ script IntroScene {
     applymovement(1, MaidEntrance)
     waitmovement(1)
     delay(40)
-    msgbox("My liege, you are awake.\n"
+    checkplayergender
+    compare (VAR_RESULT, FEMALE)
+    goto_if_eq (FemaleText)
+
+    msgbox("Young Master, you are awake.\n"
             "I've come to give you news.", MSGBOX_NPC)
     msgbox("Yes, what is it?")
     msgbox("The Patriarch will be arriving soon.", MSGBOX_NPC)
     msgbox("Yes, I understand...\n"
            "thank you for the information.\l"
            "You may leave.")
-    msgbox("Yes, my liege.", MSGBOX_NPC)
+    msgbox("Yes, Young Master.", MSGBOX_NPC)
+    waitmessage
+    applymovement(1, MaidExit)
+    waitmovement(1)
+    clearflag(FLAG_MAID)
+    waitmovement(1)
+    releaseall
+    end
+}
+
+script FemaleText {
+    msgbox("Young Mistress, you are awake.\n"
+            "I've come to give you news.", MSGBOX_NPC)
+    msgbox("Yes?")
+    msgbox("The Patriarch will be arriving soon.", MSGBOX_NPC)
+    msgbox("Yes, I understand...\n"
+           "thank you...\l"
+           "You may go.")
+    msgbox("Yes, Young Mistress.", MSGBOX_NPC)
     waitmessage
     applymovement(1, MaidExit)
     waitmovement(1)
